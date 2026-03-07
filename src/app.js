@@ -4,9 +4,10 @@ import routes from './routes/index.js';
 import cors from 'cors';
 
 export const app = express();
-app.use(cors({
-  origin: 'https://seulinkdovercel.vercel.app' 
-}));
+// app.use(cors({
+//   origin: 'https://seulinkdovercel.vercel.app' 
+// }));
+app.use(cors())
 routes(app);
 
 const conexao = await dbConnect();
