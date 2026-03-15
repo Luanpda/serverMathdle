@@ -35,6 +35,17 @@ class EquacaoController {
         } 
     }
 
+    static async listarEquacaoPorDificuldade(req, res){
+
+        try{
+            const dificuldade = req.params.dificuldade;
+            const equacao = await Equacao.find({dificuldade: dificuldade});
+            res.status(200).json(equacao);
+        }catch(error){
+            res.status(500).json({message:`${error.message} - falha na requisicao`});
+        } 
+    }
+
     static async atualizarEquacao(req, res){
 
         try{

@@ -5,6 +5,7 @@ const routes = express.Router();
 
 routes.get("/equacoes", EquacaoController.listarEquacoes);
 routes.get("/equacoes/:id", EquacaoController.listarEquacaoPorId);
+routes.get("/equacoes/dificuldade/:dificuldade", EquacaoController.listarEquacaoPorDificuldade);
 routes.post("/equacoes", EquacaoController.criarEquacao);
 routes.put("/equacoes/:id", EquacaoController.atualizarEquacao);
 routes.delete("/equacoes/:id", EquacaoController.deletarEquacao);
